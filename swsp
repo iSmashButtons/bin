@@ -1,0 +1,31 @@
+#!/bin/bash
+# 
+#╺┳┓┏━┓┏━╸	dencha@airmail.cc
+# ┃┃┗━┓┃  	github.com/ismashbuttons
+#╺┻┛┗━┛┗━╸
+#
+# Swap Spaces 
+# This script will take every file name in current working directory that has spaces and will replace the spaces with underscores. Make sure you know what you're doing because it will not warn you!
+
+counter=0
+for i in *\ *; do
+  if [[ -e $i ]]; then
+	  echo "$i"
+    counter=$((counter + 1))
+  else
+    echo "found no filenames with spaces."
+    exit 1
+  fi
+done
+
+echo -e 'Found '${counter}' filenames with spaces.\nReplace all spaces with underscores?'
+read -p "(y/n) > "
+case "$REPLY" in
+	y|Y)	for name in *\ *; do
+			mv -vn "$name" "${name// /_}"
+		done
+		;;
+	n|N)	echo "Alright then, keep your awful filenames."
+		exit
+		;;
+esac

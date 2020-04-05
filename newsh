@@ -1,0 +1,70 @@
+#!/bin/bash
+#     ____  _____ ______
+#    / __ \/ ___// ____/	script by Dennis Chaves
+#   / / / /\__ \/ /    		github.com/ismashbuttons 
+#  / /_/ /___/ / /___  		dencha@airmail.cc 
+# /_____//____/\____/   
+#                       
+# newsh:
+# Create one or more new bash script files with a template that includes a header, also chmod the file to +x
+
+# Color escape codes for use with echo. Place ${[COLOR]} at start of text color and ${DEFAULT} at the end.
+BLACK='\e[0;30m'
+RED='\e[0;31m'
+GREEN='\e[0;32m'     
+ORANGE='\e[0;33m'     
+BLUE='\e[0;34m'            
+PURPLE='\e[0;35m'          
+CYAN='\e[0;36m'            
+LIGHTGRAY='\e[0;37m'     
+DARKGRAY='\e[1;30m'     
+LIGHTRED='\e[1;31m'     
+LIGHTGREEN='\e[1;32m'   
+YELLOW='\e[1;33m'       
+LIGHTBLUE='\e[1;34m'    
+LIGHTPURPLE='\e[1;35m'  
+LIGHTCYAN='\e[1;36m'    
+WHITE='\e[1;37m'        
+DEFAULT='\e[39m'
+
+# Color test
+#echo -e ${RED}'red' ${GREEN}'green' ${ORANGE}'orange' ${BLUE}'blue' ${PURPLE}'purple' ${CYAN}'cyan' ${LIGHTGRAY}'lightGray' ${DARKGRAY}' darkGray' ${LIGHTRED}'lightRed' ${LIGHTGREEN}'lightGreen' ${YELLOW}' yellow' ${LIGHTBLUE}'lightBlue' ${LIGHTPURPLE}'lightPurple' ${LIGHTCYAN}'lightCyan' ${WHITE}'white'
+
+if [[ $1 == "" ]]; then
+  echo 'usage: '$0 '[filenames]'
+  exit 1
+fi
+
+declare -a newScripts
+
+for i in $*; do
+  cat > $i << _EOF_
+#!/bin/bash
+#     ____  _____ ______
+#    / __ \/ ___// ____/	script by Dennis Chaves
+#   / / / /\__ \/ /    		github.com/ismashbuttons 
+#  / /_/ /___/ / /___  		dencha@airmail.cc 
+# /_____//____/\____/   
+#                       
+# scriptName
+# Script description here.
+_EOF_
+  chmod +x $i
+  newScripts+=($i) 
+done
+
+# print a list of all the new files created:
+echo -en 'Scripts created:\n'
+for i in ${newScripts[@]}; do
+	echo -e ${PURPLE} $i ${DEFAULT}
+done
+
+# option to open scripts in vim
+echo -e 'To open your new script(s) in vim now, enter v.\nEnter anything else to exit.'
+read -p '>> '
+case $REPLY in
+	v|V)	vi -p ${newScripts[@]};;
+	*)	exit 0;;
+esac
+
+exit 0

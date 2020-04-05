@@ -1,0 +1,345 @@
+#!/bin/bash
+#     ____  _____ ______
+#    / __ \/ ___// ____/	script by Dennis Chaves
+#   / / / /\__ \/ /    		github.com/ismashbuttons 
+#  / /_/ /___/ / /___  		dencha@airmail.cc 
+# /_____//____/\____/   
+#                       
+# coroStat
+# output coronavirus update numbers based on corona-status.online
+# https://github.com/sagarkarira/coronavirus-tracker-cli
+
+# Colors for echo text output
+RED='\e[0;31m'
+DEFAULT='\e[39m'
+
+function usage {
+  echo -e ${RED}$0 'usage error. Proper usage:'${DEFAULT}'\ncorostat [world] [usa] [STATE]\n[STATE] is a two-letter state abbreviation. Ex: FL for Florida'
+}
+
+function world {
+  return
+}
+
+function USA_AL {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|alabama'
+  return
+}
+
+function USA_AK {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|Alaska '
+  return
+}
+
+function USA_AZ {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|Arizona'
+  return
+}
+
+function USA_AR {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|Arkansas'
+  return
+}
+
+function USA_CA {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|california'
+  return
+}
+
+function USA_CO {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|colorado'
+  return
+}
+
+function USA_CT {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|connecticut'
+  return
+}
+
+function USA_DE {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|delaware'
+  return
+}
+
+function USA_DC {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|District of Columbia'
+  return
+}
+
+function USA_FL {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|florida'
+  return
+}
+
+function USA_GA {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|georgia'
+  return
+}
+
+function USA_HI {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|hawaii'
+  return
+}
+
+function USA_ID {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|idaho'
+  return
+}
+
+function USA_IL {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|illinois'
+  return
+}
+
+function USA_IN {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|indiana'
+  return
+}
+
+function USA_IA {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|iowa'
+  return
+}
+
+function USA_KS {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|kansas'
+  return
+}
+
+function USA_KY {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|kentucky'
+  return
+}
+
+function USA_LA {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|louisiana'
+  return
+}
+
+function USA_ME {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|maine'
+  return
+}
+
+function USA_MD {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|maryland'
+  return
+}
+
+function USA_MA {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|massachusetts'
+  return
+}
+
+function USA_MI {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|michigan'
+  return
+}
+
+function USA_MN {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|minnesota'
+  return
+}
+
+function USA_MS {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|mississippi'
+  return
+}
+
+function USA_MO {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|missouri'
+  return
+}
+
+function USA_MT {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|montana'
+  return
+}
+
+function USA_NE {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|nebraska'
+  return
+}
+
+function USA_NV {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|nevada'
+  return
+}
+
+function USA_NH {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|hampshire'
+  return
+}
+
+function USA_NJ {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|jersey'
+  return
+}
+
+function USA_NM {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|mexico'
+  return
+}
+
+function USA_NY {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|york'
+  return
+}
+
+function USA_NC {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|north carolina'
+  return
+}
+
+function USA_ND {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|north dakota'
+  return
+}
+
+function USA_OH {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|ohio'
+  return
+}
+
+function USA_OK {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|oklahoma'
+  return
+}
+
+function USA_OR {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|oregon'
+  return
+}
+
+function USA_PA {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|pennsylvania'
+  return
+}
+
+function USA_RI {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|island'
+  return
+}
+
+function USA_SC {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|south carolina'
+  return
+}
+
+function USA_SD {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|south dakota'
+  return
+}
+
+function USA_TN {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|tennessee'
+  return
+}
+
+function USA_TX {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|texas'
+  return
+}
+
+function USA_UT {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|utah'
+  return
+}
+
+function USA_VT {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|vermont'
+  return
+}
+
+function USA_VA {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|virginia'
+  return
+}
+
+function USA_WA {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|washington'
+  return
+}
+
+function USA_WV {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|west virginia'
+  return
+}
+
+function USA_WI {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|wisconsin'
+  return
+}
+
+function USA_WY {
+  curl -s --show-error 'https://corona-stats.online/states/us?minimal=true' | grep -iE 'rank|wyoming' 
+  return
+}
+
+
+if [[ -z $1 ]]; then
+  usage
+fi
+
+# Depending on argument provided, corostat returns stats of USA/WORLD or one particular state.
+while [[ -n $1 ]]; do
+  case $1 in
+    usa)    curl -s --show-error 'https://corona-stats.online/states/us' | less -R;; 
+    world)  curl -s --show-error 'https://corona-stats.online/?minimal=true' | less -R;;
+    al)     USA_AL;;
+    ak)     USA_AK;;
+    az)     USA_AZ;;
+    ar)     USA_AR;;
+    ca)     USA_CA;;
+    co)     USA_CO;;
+    ct)     USA_CT;;
+    de)     USA_DE;;
+    dc)     USA_DC;;
+    fl)     USA_FL;;
+    ga)     USA_GA;;
+    hi)     USA_HI;;
+    id)     USA_ID;;
+    il)     USA_IL;;
+    in)     USA_IN;;
+    ia)     USA_IA;;
+    ks)     USA_KS;;
+    ky)     USA_KY;;
+    la)     USA_LA;;
+    me)     USA_ME;;
+    md)     USA_MD;;
+    ma)     USA_MA;;
+    mi)     USA_MI;;
+    mn)     USA_MN;;
+    ms)     USA_MS;;
+    mo)     USA_MO;;
+    mt)     USA_MT;;
+    ne)     USA_NE;;
+    nv)     USA_NV;;
+    nh)     USA_NH;;
+    nj)     USA_NJ;;
+    nm)     USA_NM;;
+    ny)     USA_NY;;
+    nc)     USA_NC;;
+    nd)     USA_ND;;
+    oh)     USA_OH;;
+    ok)     USA_OK;;
+    or)     USA_OR;;
+    pw)     USA_PW;;
+    pa)     USA_PA;;
+    pr)     USA_PR;;
+    ri)     USA_RI;;
+    sc)     USA_SC;;
+    sd)     USA_SD;;
+    tn)     USA_TN;;
+    tx)     USA_TX;;
+    ut)     USA_UT;;
+    vt)     USA_VT;;
+    va)     USA_VA;;
+    wa)     USA_WA;;
+    wv)     USA_WV;;
+    wi)     USA_WI;;
+    wy)     USA_WY;;
+    *)      echo ${RED}'invalid selection'${DEFAULT}
+    esac
+  shift
+done
